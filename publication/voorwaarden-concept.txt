@@ -1,0 +1,34 @@
+NextDNS Assistent — conceptvoorwaarden, niet gepubliceerd of aanvaard
+
+Aanbieder: Erik Le Blansch, de door de maker gekozen openbare ontwikkelaarsnaam.
+De integratie is gratis en onafhankelijk van NextDNS. De gebruiker heeft een
+eigen NextDNS-account nodig; afspraken en eventuele kosten van NextDNS en
+ChatGPT gelden afzonderlijk.
+
+Gebruik alleen een profiel waarvoor je bevoegd bent. Voer de API-sleutel in
+via het verbindingsscherm. De app kan gegevens uit dat profiel aan je ChatGPT-
+gesprek teruggeven. Lees de privacybeschrijving vóór gebruik.
+
+Lezen kan na koppelen. Schrijven vereist de afzonderlijke instelling voor
+wijzigingen. Een voorstel wordt getoond voordat het wordt uitgevoerd; de
+uitvoering controleert de bestaande waarden en leest de uitkomst terug.
+Meerdere wijzigingen zijn niet atomair. Bij een gedeeltelijke of onzekere
+uitkomst wordt niet automatisch opnieuw geprobeerd.
+
+Blokkeeradviezen kunnen gevolgen hebben voor websites en apps. De integratie
+kan de werking van alle diensten niet voorspellen. Review de voorgestelde
+regels en herstel gerichte wijzigingen als een dienst niet meer werkt.
+
+Je kunt de verbinding ontkoppelen en de API-sleutel bij NextDNS intrekken.
+Ontkoppelen wist de actieve appverbinding en voorstellen, maar wist geen
+NextDNS-profiel of bestaande ChatGPT-gesprekken.
+
+Nog te bepalen door de aanbieder vóór publicatie:
+- Een openbaar contact- en supportkanaal, ook voor privacyverzoeken.
+- De definitieve omvang en inrichting van de openbare dienst en ondersteuning.
+- Aanvullende rechtsgrond, privacyrechten, doorgiften en providerafspraken waar
+  nodig; de technische privacybeschrijving maakt hierover geen verzonnen claims.
+- Eventuele afspraken over wijzigingen, beëindiging, toepasselijk recht en
+  aansprakelijkheid. Dit concept bevat geen zelf verzonnen afstand van rechten.
+
+Deze tekst is een voorbereiding; hij is geen gepubliceerde overeenkomst.

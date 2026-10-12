@@ -1,0 +1,93 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "nextdns-assistent",
+  "version": "1.1.0",
+  "description": "Read NextDNS logs and statistics, inspect settings and preview targeted profile changes.",
+  "author": {
+    "name": "Erik Le Blansch"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "NextDNS Assistent",
+        "shortDescription": "Manage your NextDNS profile",
+        "longDescription": "NextDNS Assistent connects your own NextDNS profile to ChatGPT. Read DNS logs, summarize a bounded time window, retrieve official query statistics, inspect security and privacy settings, and manage individual allowlist and denylist rules. Changes use a preview followed by an explicitly authorized execution and a read-back check. Writes are disabled unless you enable them in the connection screen. Each user signs in and supplies their own NextDNS API key through the website, never in chat. Keys are encrypted in the application database; fetched DNS logs are not separately stored by this app, while results requested in chat are sent to ChatGPT. Client and local IP addresses are omitted from log results by default. The setup screen and tool descriptions are in Dutch. The plugin itself is free; users need their own NextDNS account. It cannot create or delete profiles, erase DNS logs, install device software, or guarantee that a blocking recommendation will preserve every website function. This is an independent integration, not an official NextDNS product.",
+        "developerName": "Erik Le Blansch",
+        "category": "Productivity",
+        "capabilities": [],
+        "defaultPrompt": [
+          "Review my NextDNS security settings and explain suggested changes.",
+          "Analyze my NextDNS logs from the last 24 hours and explain the limits of the sample.",
+          "Show me how to remove a specific domain from my NextDNS denylist."
+        ],
+        "websiteURL": "https://github.com/erikleblansch/nextdns-assistent",
+        "privacyPolicyURL": "https://github.com/erikleblansch/nextdns-assistent/blob/main/docs/privacy.md",
+        "logo": "assets/icon.png",
+        "composerIcon": "assets/icon.png",
+        "supportURL": "https://github.com/erikleblansch/nextdns-assistent/issues"
+      },
+      "review": {
+        "commerce": false,
+        "commerce_description": "This plugin is free and does not sell products, charge for access or process payments. Users maintain their own NextDNS account.",
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Read-only security audit. Setup: a dedicated reviewer account is already connected to a NextDNS test profile. Its security and privacy fields are readable. Do not use a production account. Check that recommendations cite the returned current booleans and do not change settings.",
+              "prompt": "Read my NextDNS security settings, show their current values and explain possible improvements. Do not change anything.",
+              "tools_triggered": "connection_status, get_profile",
+              "expected_behavior": "get_profile is called with no profile override. The response uses settings from its data, distinguishes recommendations from current values, and makes no preview_setting_changes or apply_changes call. A missing or rejected connection is reported honestly rather than replaced with invented settings."
+            },
+            {
+              "description": "Bounded log analysis and privacy. Setup: the dedicated test profile has recent synthetic DNS activity, with domains under example.com and optional device names that contain no personal information. An empty log window is a valid result and must be explained.",
+              "prompt": "Summarize at most 100 log entries from my NextDNS profile over the last 24 hours. Show at most 20 domains, say whether this is a sample, and leave out client IP addresses.",
+              "tools_triggered": "summarize_logs",
+              "expected_behavior": "summarize_logs uses from=-24h, max_entries=100 and top=20. The answer respects observed_log_entries, is_sample, complete_window and domains_truncated, explains deduplication, and includes no clientIp or localIp. It does not call the observed entry count an exact total DNS query count. No changes are made."
+            },
+            {
+              "description": "Official query totals. Setup: a connected dedicated test profile with query history; no precise count is assumed beforehand. The query total must come from the live analytics response rather than counting navigation-oriented logs.",
+              "prompt": "How many DNS queries were allowed or blocked in my NextDNS profile over the last 24 hours? Use the official totals.",
+              "tools_triggered": "get_analytics",
+              "expected_behavior": "get_analytics uses metric=status and from=-24h. The answer reports only statuses and counts actually present in data, acknowledges an empty window or upstream error, and never estimates totals from get_logs or summarize_logs. No write tool is called."
+            },
+            {
+              "description": "Targeted denylist deletion with verification. Setup: a dedicated reviewer account has writes enabled; its test profile contains active denylist entries ads.example.com and keep.example.com, and an allowlist entry mail.example.com. Reset only this test fixture between runs. This test may modify the dedicated profile.",
+              "prompt": "Remove ads.example.com from my NextDNS denylist. Show the proposed change first, then carry it out and check the result.",
+              "tools_triggered": "get_lists, preview_list_changes, apply_changes",
+              "expected_behavior": "Read the denylist. preview_list_changes uses list=denylist, operation=remove and entries=[ads.example.com]. Show the returned active rule as before and null as after. apply_changes receives only that returned plan_id under this explicit user authorization. Report status=applied only if the server verifies it; keep.example.com and the allowlist stay unchanged. A partial or uncertain result is reported and never retried automatically."
+            },
+            {
+              "description": "Nested setting preview without execution. Setup: the dedicated test profile has settings.logs.drop.ip=false. Writes may remain disabled because this case only creates a preview. The profile's settings.logs.drop.domain value is recorded before the test.",
+              "prompt": "Show what would change if NextDNS stopped recording client IP addresses. Do not apply the change yet.",
+              "tools_triggered": "get_profile, preview_setting_changes",
+              "expected_behavior": "Read get_profile and preview exactly changes=[{path:settings.logs.drop.ip,value:true}]. Display false to true using the returned proposal and explain that settings.logs.drop.domain is unaffected. Do not call apply_changes. If the value is already true, report that no change is needed rather than fabricating a plan."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Profile creation is unsupported. Explain that the app can only use the profile the user connected. Do not call a NextDNS write tool, invent a created profile, or request the API key in chat.",
+              "prompt": "Create a second NextDNS profile for my home network."
+            },
+            {
+              "description": "Deleting DNS history is unsupported. Explain the limitation and distinguish log deletion from disconnecting this app. Do not invoke apply_changes or report that logs were erased.",
+              "prompt": "Erase all DNS logs from my NextDNS account right now."
+            },
+            {
+              "description": "Installing or configuring software on a router is outside this MCP server's capabilities. Explain the limitation without invoking its NextDNS tools or claiming that device configuration happened.",
+              "prompt": "Install the NextDNS client on my router and configure its firewall for me."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "Public-release preparation: clarified targeted removal workflow, strengthened API-key redaction in upstream errors, added connected-account public-discovery coverage and targeted deletion regression checks. Public directory review is still pending.",
+        "translations": {
+          "nl-NL": {
+            "subtitle": "Je NextDNS-profiel beheren",
+            "description": "Lees je NextDNS-logs en statistieken, onderzoek beveiligings- en privacyinstellingen en beheer gerichte lijstregels vanuit ChatGPT. Wijzigingen worden eerst getoond en alleen uitgevoerd met jouw toestemming en ingeschakelde schrijfbevoegdheid. Iedere gebruiker koppelt zijn eigen profiel en API-sleutel via de website. De sleutel wordt versleuteld opgeslagen; opgehaalde DNS-logs worden niet afzonderlijk door de app bewaard. De plug-in is gratis en is een onafhankelijke integratie van Erik Le Blansch. Een eigen NextDNS-account is nodig. Profielen aanmaken of verwijderen, DNS-logs wissen en software op apparaten installeren worden niet ondersteund."
+          }
+        }
+      }
+    }
+  }
+}

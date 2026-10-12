@@ -1,0 +1,47 @@
+name: Fout melden
+description: Beschrijf een fout in NextDNS Assistent.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Dit formulier wordt een openbaar GitHub Issue. Deel geen API-sleutels, profiel-ID's, IP-adressen of persoonlijke DNS-logexports.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Wat ging er mis?
+      description: Beschrijf het gedrag en de eventuele foutmelding, met privégegevens verwijderd.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Hoe kan het probleem worden herhaald?
+      description: Geef de stappen of een voorbeeldvraag met fictieve domeinen en gegevens.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Wat verwachtte je?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Onderdeel
+      options:
+        - Verbinding
+        - Logs of statistieken
+        - Lijsten of instellingen
+        - Wijzigingen uitvoeren
+        - Interface
+        - Ander onderdeel
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Controle
+      options:
+        - label: Ik heb sleutels, profiel-ID's en andere privégegevens uit deze melding verwijderd.
+          required: true

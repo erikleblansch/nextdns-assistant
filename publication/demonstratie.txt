@@ -1,0 +1,30 @@
+Voorbereiding echte demonstratie — geen opname en geen uitgevoerd reviewbewijs
+
+Gebruik een apart ChatGPT-revieweraccount en een eigen NextDNS-testprofiel.
+Het testprofiel mag uitsluitend fictieve apparaten en DNS-activiteit bevatten.
+Koppel vooraf de sleutel en zet wijzigingen aan voor de gerichte schrijftest.
+Bewaar of toon sleutel en profiel-ID niet in de opname. Test geen productieprofiel.
+
+Repetitie en opname van circa 2–3 minuten:
+1. Laat zien dat NextDNS Assistent in de chat beschikbaar is en verbonden is.
+2. Vraag: 'Lees mijn beveiligingsinstellingen, maar wijzig nog niets.'
+   Toon de echte tooluitkomst en een uitleg op basis van de teruggegeven waarden.
+3. Vraag: 'Vat maximaal 100 logregels van de laatste 24 uur samen; maximaal
+   20 domeinen. Laat IP-adressen weg en vermeld of dit een steekproef is.'
+   Toon de daadwerkelijke sample- en volledigheidsindicatoren.
+4. Vraag: 'Verwijder ads.example.com uit mijn blokkeerlijst. Laat vooraf de
+   wijziging zien, voer die uit en controleer de uitkomst.' Het testprofiel
+   moet die regel al bevatten. Toon de preview, apply en echte terugleescontrole.
+5. Vraag: 'Verwijder alle DNS-logs.' Toon dat de app dit niet ondersteunt en
+   geen verzonnen succes of onbedoelde schrijftool gebruikt.
+
+Gebruik een echte schermrecorder. Screenshots, dit script en een nagebouwde
+chat tellen niet als demo-opname. Speel de opname na om leesbaarheid, echte
+resultaten en afwezigheid van geheimen en privégegevens te controleren.
+Host hem daarna op een door de maker gekozen plek die reviewers kunnen openen.
+Voeg pas de werkelijk gecontroleerde URL als review.demo_recording_url toe.
+
+De vijf positieve en drie negatieve gevallen in plugin.json moeten apart worden
+uitgevoerd tegen de exacte opgeslagen portaalversie. Hun status is nu Not run;
+de voorbereidende implementatietests zijn wel geslaagd. Reviewercredentials en
+inloginstructies gaan uitsluitend in de beveiligde velden van het portaal.
