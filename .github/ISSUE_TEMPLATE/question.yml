@@ -1,23 +1,23 @@
-name: Vraag of suggestie
-description: Stel een vraag of geef een verbetersuggestie.
-title: "[Vraag]: "
+name: Question or suggestion
+description: Ask a question or suggest an improvement.
+title: "[Question]: "
 labels: [question]
 body:
   - type: markdown
     attributes:
       value: |
-        GitHub Issues zijn openbaar. Gebruik fictieve voorbeelden en laat API-sleutels, profiel-ID's, IP-adressen en persoonlijke logs weg.
+        GitHub Issues are public. Use fictional examples and omit API keys, profile IDs, IP addresses and personal logs.
   - type: textarea
     id: question
     attributes:
-      label: Vraag of suggestie
-      description: Leg uit wat je wilt weten of verbeteren en waarom.
+      label: Question or suggestion
+      description: Explain what you want to understand or improve and why.
     validations:
       required: true
   - type: checkboxes
     id: privacy
     attributes:
-      label: Controle
+      label: Privacy check
       options:
-        - label: Mijn bericht bevat geen sleutels of privégegevens.
+        - label: My message contains no keys or private information.
           required: true

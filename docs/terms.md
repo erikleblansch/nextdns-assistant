@@ -1,41 +1,40 @@
-# Conceptgebruiksvoorwaarden — NextDNS Assistent
+# Draft terms of use — NextDNS Assistant
 
-Dit is de concrete voorbereiding voor openbare publicatie. Definitieve
-voorwaarden en de verklaringen in het publicatieportaal zijn nog niet afgerond.
+This is preparation for public release. Final terms and the required
+publication portal attestations have not yet been completed.
 
-## Integratie en kosten
+## Integration and costs
 
-NextDNS Assistent is een gratis, onafhankelijke integratie van Erik Le Blansch.
-De plug-in verkoopt geen producten en verwerkt geen betalingen. Gebruikers
-regelen zelf hun NextDNS- en ChatGPT-account; afspraken en eventuele kosten
-van die diensten staan los van deze integratie.
+NextDNS Assistant is a free, independent integration by Erik Le Blansch. The
+plugin does not sell products or process payments. Users maintain their own
+NextDNS and ChatGPT accounts; those services' terms and any costs are separate.
 
-## Gebruik
+## Use
 
-Gebruik alleen een profiel waarvoor je bevoegd bent. Voer je API-sleutel in
-via het verbindingsscherm. Opgevraagde profielgegevens kunnen in je
-ChatGPT-gesprek terugkomen. Lees de [privacybeschrijving](privacy.md).
+Use only a profile you are authorized to access. Enter your API key through the
+connection screen. Requested profile data may appear in your ChatGPT
+conversation. Read the [privacy description](privacy.md).
 
-Lezen kan na koppelen. Schrijven vereist de instelling **Wijzigingen toestaan**.
-Een wijziging wordt eerst voorgesteld en vervolgens onder jouw toestemming
-uitgevoerd. De app controleert de oude waarden en leest de uitkomst terug.
-Voorstellen verlopen na tien minuten. Meerdere wijzigingen zijn niet atomair;
-een gedeeltelijke of onzekere uitvoering moet eerst worden gecontroleerd en
-wordt niet automatisch opnieuw geprobeerd.
+Reading is available after connection. Writes require **Allow changes**.
+A change is previewed first and executed under your authorization. The app
+checks previous values and reads back the result. Proposals expire after ten
+minutes. Multiple changes are not atomic; a partial or uncertain execution
+must be checked and is never retried automatically.
 
-Blokkeeradviezen kunnen functies van websites en apps beïnvloeden. Controleer
-de voorgestelde regels en maak een gericht herstelvoorstel als een dienst
-niet meer goed werkt. De app maakt of verwijdert geen NextDNS-profielen,
-wist geen DNS-logs en installeert geen software op apparaten.
+Blocking recommendations may affect website and app features. Review proposed
+rules and request a targeted recovery proposal if a service stops working.
+The app cannot create or delete NextDNS profiles, erase DNS logs or install
+software on devices.
 
-## Ondersteuning en ontkoppelen
+## Support and disconnection
 
-Vragen en opmerkingen kunnen via [GitHub Issues](https://github.com/erikleblansch/nextdns-assistent/issues).
-Verwijder sleutels en privégegevens uit berichten. Je kunt de koppeling
-ontkoppelen of de sleutel bij NextDNS intrekken. Ontkoppelen wist geen profiel
-bij NextDNS en geen bestaande ChatGPT-gesprekken.
+Use [GitHub Issues](https://github.com/erikleblansch/nextdns-assistent/issues)
+for questions and feedback. Remove keys and private data from messages.
+You can disconnect the integration or revoke your key at NextDNS.
+Disconnecting does not delete a NextDNS profile or existing ChatGPT
+conversations.
 
-Voor de definitieve publicatie moet de maker nog besluiten over eventuele
-aanvullende afspraken over beschikbaarheid, wijzigingen, beëindiging,
-privacyrechten en ondersteuning. Dit concept vult die beslissingen niet in
-en bevat geen zelf verzonnen afstand van rechten of aansprakelijkheidsclausules.
+Before final publication, the publisher must decide any additional service
+terms concerning availability, changes, termination, privacy rights and
+support. This draft does not make those decisions or invent waivers of rights
+or liability clauses.

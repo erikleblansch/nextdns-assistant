@@ -1,21 +1,20 @@
-NextDNS Assistent — concept voor openbare directorypublicatie
+NextDNS Assistant — draft public directory release materials
 
-De code en publicatiematerialen zijn voorbereid voor de persoonlijke
-GitHub-repository erikleblansch/nextdns-assistent. GitHub Issues is het door de
-maker gekozen supportkanaal. De repository is openbaar en GitHub Issues is ingeschakeld. Product-,
-support- en privacy-URL's zijn in plugin.json opgenomen. De voorwaarden
-blijven een concept; er is nog geen review ingediend.
+Source and publication materials are published in the public GitHub repository
+erikleblansch/nextdns-assistent. GitHub Issues is the publisher's chosen support
+channel and is enabled. Product, support and privacy URLs are included in
+plugin.json. Terms remain a draft; no directory review has been submitted.
 
-Lees docs/publication-status.md voor de feitelijke status en ontbrekende
-materialen. De directoryreview vereist een aparte demo en reviewerinstallatie;
-de implementatietests vervangen die niet. Bewaar toegangsinformatie voor
-reviewers uitsluitend in de beveiligde velden van het publicatieportaal.
+Read docs/publication-status.md for the actual status and remaining materials.
+Directory review requires a real demo and an independent reviewer installation;
+implementation tests do not replace them. Store reviewer credentials only in
+the publication portal's secure fields.
 
-Deze snapshot bevat geen oorspronkelijke Git-geschiedenis, persoonlijke
-NextDNS-profiel-ID, API-sleutel, versleutelde sleutel, database, DNS-logs,
-account-e-mailadres, hostingproject-ID of hostingcredential van de maker.
-De gekozen openbare ontwikkelaarsnaam is wel opgenomen.
+This snapshot contains no original Git history, personal NextDNS profile ID,
+API key, encrypted key, database, DNS logs, account email address, existing
+hosting project ID or hosting credential. The chosen public developer name
+is included.
 
-De persoonlijke live plug-in en de gehoste service zijn niet door deze export
-vervangen. Gebruik voor openbare indiening alleen een route die de bestaande
-Sites-App en diens eigendom behoudt; maak geen dubbele App.
+This source export does not replace the existing hosted service. Use only a
+submission route that preserves the existing Sites App and its ownership;
+do not create a duplicate App.

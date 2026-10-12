@@ -1,59 +1,57 @@
-# Privacy & gegevens — NextDNS Assistent
+# Privacy & data — NextDNS Assistant
 
-**Maker:** Erik Le Blansch. **Bijgewerkt:** 12 oktober 2026.
+**Publisher:** Erik Le Blansch. **Updated:** October 12, 2026.
 
-NextDNS Assistent is een gratis, onafhankelijke integratie. Deze pagina
-beschrijft de gegevensverwerking van de huidige implementatie.
+NextDNS Assistant is a free, independent integration. This page describes
+data processing in the current implementation.
 
-## Accountgebonden gegevens
+## Account-specific data
 
-Je logt in met ChatGPT en koppelt zelf een NextDNS-profiel. De platform-
-gebruikers-ID scheidt je gegevens van die van andere gebruikers. De actieve
-database bevat die gebruikers-ID, je versleutelde API-sleutel, profiel-ID,
-profielnaam, schrijfbevoegdheid en technische revisies en tijdstippen.
+You sign in with ChatGPT and connect your own NextDNS profile. The platform
+user ID separates your data from other users' data. The active database stores
+that user ID, your encrypted API key, profile ID, profile name, write permission,
+technical revisions and timestamps.
 
-Sleutels worden met AES-256-GCM versleuteld en aan de gebruikers-ID gebonden.
-De app stuurt de opgeslagen sleutel niet terug naar de browser of chat.
-De beheerder heeft technische beheermogelijkheden voor de gehoste app;
-deze opslag is geen versleuteling waarbij alleen jij kunt ontsleutelen.
+Keys are encrypted with AES-256-GCM and bound to the user ID. The app does not
+return the stored key to the browser or chat. The administrator has technical
+access to the hosted application; this is not encryption that only you can
+decrypt.
 
-## Resultaten en wijzigingsvoorstellen
+## Results and change proposals
 
-Op jouw verzoek haalt de app logs, statistieken, lijsten en instellingen op
-bij NextDNS. Er wordt geen afzonderlijke kopie van de opgehaalde DNS-logs
-bewaard. Resultaten die je in je gesprek opvraagt gaan naar ChatGPT. Domeinen,
-apparaatnamen en instellingen kunnen persoonlijke informatie bevatten.
-Client- en lokale IP-adressen worden standaard uit logresultaten weggelaten;
-je kunt expliciet vragen ze mee te nemen.
+At your request, the app retrieves logs, analytics, lists and settings from
+NextDNS. It does not separately store fetched DNS logs. Results requested in
+your conversation are sent to ChatGPT. Domains, device names and settings may
+contain personal information. Client and local IP addresses are omitted from
+log results by default; you can explicitly request their inclusion.
 
-De app bewaart wijzigingsvoorstellen, oude en nieuwe waarden, de betrokken
-domeinen of instellingen, tijdstippen en uitvoeringsresultaten. Die voorstellen
-zijn ongeveer dertig dagen terug te bekijken. Oudere records worden verwijderd
-wanneer dezelfde gebruiker een nieuw voorstel maakt. Dit is geen garantie dat
-ieder record binnen dertig dagen uit alle opslag wordt verwijderd.
+The app stores change proposals, previous and proposed values, affected domains
+or settings, timestamps and execution results. Proposals can be viewed for
+approximately thirty days. Older records are deleted when the same user
+creates a new proposal. This is not a guarantee that every record is deleted
+from all storage within thirty days.
 
 ## Hosting
 
-De app gebruikt ChatGPT Sites, de Cloudflare Worker-runtime en de NextDNS API.
-Er zijn geen eigen advertentietrackers of analytics-scripts. De platforms
-kunnen zelf authenticatiegegevens, verzoekmetadata, operationele logs en
-back-ups verwerken. Deze beschrijving doet geen toezegging over hun
-bewaartermijnen of gebruik van gegevens; daarvoor gelden hun eigen afspraken.
+The app uses ChatGPT Sites, the Cloudflare Worker runtime and the NextDNS API.
+It contains no advertising trackers or custom analytics scripts. Those
+platforms may process authentication data, request metadata, operational logs
+and backups under their own policies. This description does not promise
+retention periods or data uses on behalf of those providers.
 
-## Verwijderen en intrekken
+## Deletion and revocation
 
-Met **Verbinding ontkoppelen** verwijder je je opgeslagen verbinding en
-wijzigingsvoorstellen uit de actieve appdatabase. Daarmee wis je geen
-NextDNS-profiel en geen bestaande ChatGPT-gesprekken. Je kunt je API-sleutel
-ook bij NextDNS intrekken.
+Use **Disconnect** to delete your stored connection and change proposals from
+the active app database. This does not delete your NextDNS profile or existing
+ChatGPT conversations. You can also revoke your API key at NextDNS.
 
-## Vragen en opmerkingen
+## Questions and feedback
 
-Voor vragen en opmerkingen kun je terecht bij [GitHub Issues](https://github.com/erikleblansch/nextdns-assistent/issues).
-Die berichten zijn openbaar: vermeld daar geen sleutels, profiel-ID's,
-IP-adressen of persoonlijke logs. Voor het verwijderen van je eigen actieve
-appgegevens gebruik je de ontkoppelfunctie.
+Use [GitHub Issues](https://github.com/erikleblansch/nextdns-assistent/issues)
+for questions and feedback. Issues are public: do not include keys, profile
+IDs, IP addresses or personal logs. Use the disconnection function to remove
+your own active app data.
 
-De directorypublicatie is nog in voorbereiding. De maker moet aanvullende
-privacy- en publicatiebeslissingen en de vereiste portaalverklaringen afronden
-voordat de openbare dienst wordt ingediend.
+The directory listing is still being prepared. The publisher must complete
+the remaining publication decisions and required portal attestations before
+submitting the public service.

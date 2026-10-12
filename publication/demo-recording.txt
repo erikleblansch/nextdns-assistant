@@ -1,0 +1,30 @@
+Real demo preparation — no recording or completed review evidence yet
+
+Use a separate ChatGPT reviewer account and a dedicated NextDNS test profile.
+Use fictional devices and synthetic DNS activity only. Connect the key in
+advance and enable changes for the targeted write test. Do not record the key
+or profile ID. Do not use a production profile.
+
+Rehearse and record approximately 2–3 minutes:
+1. Show that NextDNS Assistant is available in chat and connected.
+2. Ask: "Read my security settings, but do not change anything."
+   Show the real tool result and an explanation based on returned values.
+3. Ask: "Summarize at most 100 log entries from the last 24 hours; show at most
+   20 domains. Omit IP addresses and say whether this is a sample."
+   Show the actual sampling and completeness indicators.
+4. Ask: "Remove ads.example.com from my denylist. Show the change first,
+   apply it and check the result." The test profile must already contain
+   that entry. Show the preview, apply result and real read-back verification.
+5. Ask: "Erase all DNS logs." Show that the app does not support this and
+   does not invent a success or call an unintended write tool.
+
+Use a real screen recorder. Screenshots, this script and a simulated chat do
+not count as a demo recording. Play back the video to check readability,
+real results and the absence of secrets or private data. Host it somewhere
+the publisher chooses that reviewers can access. Add review.demo_recording_url
+only after the real URL has been checked.
+
+Run the five positive and three negative cases in plugin.json separately
+against the exact saved portal version. Their status is currently Not run;
+the implementation tests have passed. Put reviewer credentials and sign-in
+instructions only in the secure portal fields.

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "nextdns-assistent",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Read NextDNS logs and statistics, inspect settings and preview targeted profile changes.",
   "author": {
     "name": "Erik Le Blansch"
@@ -9,9 +9,9 @@
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "NextDNS Assistent",
+        "displayName": "NextDNS Assistant",
         "shortDescription": "Manage your NextDNS profile",
-        "longDescription": "NextDNS Assistent connects your own NextDNS profile to ChatGPT. Read DNS logs, summarize a bounded time window, retrieve official query statistics, inspect security and privacy settings, and manage individual allowlist and denylist rules. Changes use a preview followed by an explicitly authorized execution and a read-back check. Writes are disabled unless you enable them in the connection screen. Each user signs in and supplies their own NextDNS API key through the website, never in chat. Keys are encrypted in the application database; fetched DNS logs are not separately stored by this app, while results requested in chat are sent to ChatGPT. Client and local IP addresses are omitted from log results by default. The setup screen and tool descriptions are in Dutch. The plugin itself is free; users need their own NextDNS account. It cannot create or delete profiles, erase DNS logs, install device software, or guarantee that a blocking recommendation will preserve every website function. This is an independent integration, not an official NextDNS product.",
+        "longDescription": "NextDNS Assistant connects your own NextDNS profile to ChatGPT. Read DNS logs, summarize a bounded time window, retrieve official query statistics, inspect security and privacy settings, and manage individual allowlist and denylist rules. Changes use a preview followed by an explicitly authorized execution and a read-back check. Writes are disabled unless you enable them in the connection screen. Each user signs in and supplies their own NextDNS API key through the website, never in chat. Keys are encrypted in the application database; fetched DNS logs are not separately stored by this app, while results requested in chat are sent to ChatGPT. Client and local IP addresses are omitted from log results by default. The setup screen and tool descriptions are in English. The plugin itself is free; users need their own NextDNS account. It cannot create or delete profiles, erase DNS logs, install device software, or guarantee that a blocking recommendation will preserve every website function. This is an independent integration, not an official NextDNS product.",
         "developerName": "Erik Le Blansch",
         "category": "Productivity",
         "capabilities": [],
@@ -80,13 +80,7 @@
       },
       "publication": {
         "countries": [],
-        "release_notes": "Public-release preparation: clarified targeted removal workflow, strengthened API-key redaction in upstream errors, added connected-account public-discovery coverage and targeted deletion regression checks. Public directory review is still pending.",
-        "translations": {
-          "nl-NL": {
-            "subtitle": "Je NextDNS-profiel beheren",
-            "description": "Lees je NextDNS-logs en statistieken, onderzoek beveiligings- en privacyinstellingen en beheer gerichte lijstregels vanuit ChatGPT. Wijzigingen worden eerst getoond en alleen uitgevoerd met jouw toestemming en ingeschakelde schrijfbevoegdheid. Iedere gebruiker koppelt zijn eigen profiel en API-sleutel via de website. De sleutel wordt versleuteld opgeslagen; opgehaalde DNS-logs worden niet afzonderlijk door de app bewaard. De plug-in is gratis en is een onafhankelijke integratie van Erik Le Blansch. Een eigen NextDNS-account is nodig. Profielen aanmaken of verwijderen, DNS-logs wissen en software op apparaten installeren worden niet ondersteund."
-          }
-        }
+        "release_notes": "English public-release preparation: translated the interface, tool descriptions, errors, documentation and GitHub issue forms; added GitHub support links. Targeted changes remain previewed and verified. Public directory review is still pending."
       }
     }
   }

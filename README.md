@@ -1,61 +1,61 @@
-# NextDNS Assistent
+# NextDNS Assistant
 
-NextDNS-loganalyse en gericht profielbeheer vanuit ChatGPT. Een gratis,
-onafhankelijke integratie van **Erik Le Blansch**; geen officieel NextDNS-product.
+Analyze NextDNS logs and manage targeted profile settings from ChatGPT. A free,
+independent integration by **Erik Le Blansch**, unaffiliated with NextDNS.
 
-## Beschikbaarheid
+## Availability
 
-De broncode staat openbaar op GitHub. De bestaande ChatGPT-plug-in werkt privé; publicatie in de openbare plug-indirectory is nog niet
-ingediend of goedgekeurd. Het publiceren van deze code installeert de plug-in
-niet automatisch en maakt geen toegang tot een NextDNS-account openbaar.
+The source code is public on GitHub. The existing ChatGPT plugin is currently
+private; its public plugin directory listing has not been submitted or approved.
+Publishing this code does not automatically install the plugin or expose access
+to a NextDNS account.
 
-## Wat de integratie kan
+## Features
 
-- DNS-logs lezen en een begrensd tijdvenster samenvatten.
-- Officiële querytotalen en tijdreeksen ophalen.
-- Beveiliging, privacy en overige profielinstellingen uitlezen.
-- Specifieke allowlist- en denylistregels toevoegen, verwijderen of activeren.
-- Gerichte booleaanse instellingen voorstellen en uitvoeren.
-- Oude waarden en resultaten van eigen wijzigingsvoorstellen terugkijken.
+- Read DNS logs and summarize a bounded time window.
+- Retrieve official query totals and time series.
+- Inspect security, privacy and other profile settings.
+- Add, remove or activate specific allowlist and denylist entries.
+- Preview and apply targeted boolean setting changes.
+- Review previous values and results of your own change proposals.
 
-Een wijziging begint met een voorvertoning. Uitvoering vereist toestemming van
-de gebruiker en ingeschakelde schrijfbevoegdheid. De huidige waarden worden
-gecontroleerd en de uitkomst wordt teruggelezen. Meerdere wijzigingen zijn niet
-atomair; gedeeltelijke of onzekere uitkomsten worden niet automatisch herhaald.
-De integratie maakt of verwijdert geen profielen en wist geen DNS-logs.
+Changes begin with a preview. Execution requires the user's authorization and
+enabled write access. The app checks current values and reads back the result.
+Multiple changes are not atomic; partial or uncertain results are never retried
+automatically. The integration cannot create or delete profiles or erase DNS logs.
 
-## Vragen en opmerkingen
+## Questions and feedback
 
-Open een [GitHub Issue](https://github.com/erikleblansch/nextdns-assistent/issues).
-Gebruik het formulier voor een foutmelding, vraag of suggestie. **Issues zijn
-openbaar:** deel geen API-sleutels, profiel-ID's, IP-adressen of persoonlijke
-logexports. De Issue-formulieren vragen alleen om de informatie die voor het
-beschrijven van het probleem nodig is.
+Open a [GitHub Issue](https://github.com/erikleblansch/nextdns-assistent/issues)
+using the bug report or question/suggestion form. **Issues are public:** do not
+share API keys, profile IDs, IP addresses or personal DNS log exports. Use
+fictional examples and remove private information from error messages.
 
 ## Privacy
 
-Elke gebruiker koppelt zijn eigen profiel via het verbindingsscherm. De sleutel
-hoeft niet in de chat en is versleuteld opgeslagen met AES-256-GCM en binding
-aan de platformgebruikers-ID. De beheerder heeft technische beheermogelijkheden;
-dit is geen versleuteling waarbij alleen de gebruiker kan ontsleutelen.
+Each user connects their own profile through the connection screen. API keys do
+not need to be shared in chat. They are stored using AES-256-GCM encryption,
+bound to the platform user ID. The administrator has technical access to the
+hosted application; this is not encryption that only the user can decrypt.
 
-De app bewaart geen afzonderlijke kopie van de opgehaalde DNS-logs. Opgevraagde
-resultaten gaan wel naar ChatGPT voor verwerking in het gesprek. Client- en
-lokale IP-adressen worden standaard uit logresultaten verwijderd. Voorstellen,
-oude waarden en uitvoeringsresultaten worden door de app bewaard. Ontkoppelen
-verwijdert de actieve appverbinding en voorstellen.
+The app does not separately store fetched DNS logs. Results requested in chat
+are sent to ChatGPT for processing in the conversation. Client and local IP
+addresses are omitted from log results by default. Proposals, previous values
+and execution results are stored. Disconnecting deletes the active app
+connection and its proposals.
 
-Meer informatie: [privacybeschrijving](docs/privacy.md) en
-[conceptgebruiksvoorwaarden](docs/terms.md).
+Read the [privacy description](docs/privacy.md) and
+[draft terms of use](docs/terms.md).
 
-## Ontwikkeling
+## Development
 
-De app gebruikt React, Vinext/Vite, Cloudflare Workers en D1. Sites verzorgt
-de ChatGPT-authenticatie en de MCP/OAuth-verbinding. De taal van de interface
-en toolbeschrijvingen is Nederlands.
+The app uses React, Vinext/Vite, Cloudflare Workers and D1. Sites provides
+ChatGPT authentication and the MCP/OAuth connection. The interface, tool
+descriptions and documentation are in English. Chat responses can use the
+user's preferred language.
 
-Vereist: Node.js 22.13 of hoger; de tests zijn uitgevoerd met Node.js 22 en
-de ingebouwde SQLite-ondersteuning. De package manager staat in `package.json`.
+Requirements: Node.js 22.13 or later. The tests use Node.js 22 and its built-in
+SQLite support. The package manager version is specified in `package.json`.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -64,39 +64,38 @@ pnpm exec tsc --noEmit
 pnpm build
 ```
 
-Voor eigen hosting via Sites registreer je een **eigen** project, configureer
-je de D1-binding `DB`, voer je de SQL-migratie uit en stel je de serversecret
-`NEXTDNS_ENCRYPTION_KEY` in. `.env.example` bevat alleen de naam, geen waarde.
-Die secret is een willekeurige sleutel van 32 bytes, Base64-gecodeerd; bewaar
-dezelfde secret om bestaande verbindingen te kunnen ontsleutelen.
+For your own Sites deployment, register your own project, configure the D1
+binding `DB`, apply the SQL migration and set the server secret
+`NEXTDNS_ENCRYPTION_KEY`. `.env.example` contains only the variable name, with
+no value. Generate a random 32-byte key encoded as Base64. Keep the same secret
+to decrypt existing connections.
 
-De opgenomen `.openai/hosting.json` bevat bewust geen bestaand project-ID.
-Gebruik de gebruikelijke Sites-workflow om je eigen project te registreren
-en de identiteit van dat project vast te leggen.
+The included `.openai/hosting.json` deliberately omits the existing project's
+ID. Use the standard Sites workflow to register and retain your own project
+identity.
 
-Productieroutes vertrouwen alleen de gebruikersidentiteit die Sites injecteert.
-Een los gehoste Worker heeft een eigen vertrouwde authenticatielaag nodig;
-rechtstreeks aangeleverde identiteitheaders zijn daarvoor geen authenticatie.
-De lokale mock-authenticatie van de starter is alleen voor ontwikkeling.
+Production routes trust the user identity injected by Sites. A separately
+hosted Worker needs its own trusted authentication layer; client-supplied
+identity headers are not authentication. The starter's local mock
+authentication is for development only.
 
-## Code en controles
+## Source and validation
 
-- `lib/nextdns-core.mjs`: API-client, versleuteling, MCP-tools en wijzigingsplannen.
-- `app/api/connection/route.ts`: accountgebonden koppelen en ontkoppelen.
-- `app/mcp/route.ts`: stateless Streamable HTTP MCP-endpoint.
-- `app/setup-screen.tsx`: verbindingsscherm en voorbeeldvragen.
-- `db/` en `drizzle/`: opslagstructuur en SQL-migratie; geen opgeslagen gegevens.
-- `tests/`: zeventien controles met uitsluitend synthetische gegevens.
-- `publication/`: conceptmetadata en reviewgevallen voor de directory.
+- `lib/nextdns-core.mjs`: API client, encryption, MCP tools and change plans.
+- `app/api/connection/route.ts`: account-specific connection and disconnection.
+- `app/mcp/route.ts`: stateless Streamable HTTP MCP endpoint.
+- `app/setup-screen.tsx`: connection screen and example prompts.
+- `db/` and `drizzle/`: storage schema and SQL migration, with no stored data.
+- `tests/`: seventeen checks using synthetic data only.
+- `publication/`: draft directory metadata and review cases.
 
-De zeventien implementatiecontroles slagen, inclusief gebruikersscheiding,
-anonieme ontdekking, gerichte verwijdering, sleutelafscherming, paginering,
-verlopen/verouderde voorstellen en de native Worker-fetch-runtime. De acht
-directoryreviewprompts zijn nog niet uitgevoerd in een onafhankelijke
-reviewerinstallatie.
+The seventeen implementation checks pass, covering user isolation, anonymous
+discovery, targeted deletion, key redaction, pagination, expired/stale proposals
+and the native Worker fetch runtime. The eight directory review prompts have
+not yet been run in an independent reviewer installation.
 
-Deze bronexport bevat geen database, runtimegegevens, omgevingssecret,
-persoonlijke NextDNS-profiel-ID of oorspronkelijke Git-geschiedenis.
-Derdepartijlicenties blijven bij de betreffende bestanden aanwezig.
+This source export contains no database, runtime data, environment secret,
+personal NextDNS profile ID or original Git history. Third-party license
+notices are retained in the relevant files.
 
-Officiële API-documentatie: <https://nextdns.github.io/api/>.
+Official API documentation: <https://nextdns.github.io/api/>.

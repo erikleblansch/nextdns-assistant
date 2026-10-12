@@ -1,36 +1,37 @@
-# Voorbereiding directorypublicatie
+# Public directory release preparation
 
-De maker heeft gekozen voor:
+The publisher has chosen:
 
-- Publieke ontwikkelaarsnaam: **Erik Le Blansch**.
-- Gratis toegang tot de plug-in.
-- Beschikbaarheid in alle door het platform ondersteunde landen.
-- Broncode op het persoonlijke GitHub-account `erikleblansch`.
-- GitHub Issues voor vragen en opmerkingen.
+- Public developer name: **Erik Le Blansch**.
+- Free access to the plugin.
+- Availability in all countries supported by the platform.
+- Source code on the personal GitHub account `erikleblansch`.
+- GitHub Issues for questions and feedback.
+- English interface, tool descriptions, documentation and listing.
 
-De persoonlijke repository `erikleblansch/nextdns-assistent` is aangemaakt,
-openbaar en heeft GitHub Issues ingeschakeld. Broncode en documentatie zijn
-opgenomen in deze snapshot.
+The repository `erikleblansch/nextdns-assistent` is public and has GitHub Issues
+enabled. Sanitized source code and documentation are published there.
 
-| Veld | Bestemming |
+| Field | Destination |
 | --- | --- |
-| Productwebsite | https://github.com/erikleblansch/nextdns-assistent |
+| Product website | https://github.com/erikleblansch/nextdns-assistent |
 | Support | https://github.com/erikleblansch/nextdns-assistent/issues |
 | Privacy | https://github.com/erikleblansch/nextdns-assistent/blob/main/docs/privacy.md |
-| Voorwaarden | `docs/terms.md` is nog een concept; geen definitieve termsOfServiceURL |
+| Terms | `docs/terms.md` remains a draft; no final termsOfServiceURL |
 
-`publication/plugin.json` bevat deze product-, support- en privacy-URL's.
-De gebruiksvoorwaarden moeten nog worden afgerond. De URL's worden na het
-publiceren van de bestanden afzonderlijk op openbare toegang gecontroleerd.
+`publication/plugin.json` contains the product, support and privacy URLs.
+The repository's public visibility, Issues setting and uploaded source were
+verified through GitHub's API. Final terms remain to be completed.
 
-De implementatie is getest. Een apart revieweraccount met vooraf gekoppelde
-NextDNS-testgegevens, een echt opgenomen demo met controleerbare URL, de
-ontwikkelaarsverificatie en portaalverklaringen zijn nog nodig. De acht
-reviewprompts zijn niet uitgevoerd in een onafhankelijke reviewerinstallatie.
+Implementation checks pass. A separate reviewer account connected to
+dedicated NextDNS test data, a real recorded demo with a verified URL,
+developer verification and portal attestations are still required. The eight
+review prompts have not been run in an independent reviewer installation.
+See `publication/demo-recording.txt` for the recording plan.
 
-Gebruik een indieningsroute die de bestaande Sites-App en diens eigendom
-behoudt. De upload mag geen tweede App of dubbele privéplug-in creëren.
-Er is nog geen directorydraft aangemaakt en geen review ingediend.
+Use a submission route that preserves the existing Sites App and its
+ownership. An upload must not create a second App or duplicate private plugin.
+No directory draft has been created and no review has been submitted.
 
-Officiële publicatieprocedure:
+Official submission procedure:
 <https://developers.openai.com/plugins/deploy/submission>.

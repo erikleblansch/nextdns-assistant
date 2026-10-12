@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NextDNS Assistent",
-  description: "Je NextDNS-profiel beheren en logs onderzoeken vanuit ChatGPT.",
+  title: "NextDNS Assistant",
+  description: "Manage your NextDNS profile and explore logs from ChatGPT.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl">
+    <html lang="en">
       <body className="antialiased">{children}</body>
     </html>
   );

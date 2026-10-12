@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Privacy & gegevens | NextDNS Assistent" };
+export const metadata: Metadata = { title: "Privacy & data | NextDNS Assistant" };
 
 export default function Privacy() {
   return <main className="nd-shell nd-info">
-    <a href="/">← NextDNS Assistent</a>
-    <h1>Privacy & gegevens</h1>
-    <p>NextDNS Assistent is een gratis, onafhankelijke integratie van Erik Le Blansch. Deze pagina beschrijft hoe de huidige versie gegevens verwerkt. Bijgewerkt op 12 oktober 2026.</p>
-    <h2>Je eigen verbinding</h2>
-    <p>Je koppelt zelf een NextDNS-profiel na het inloggen met ChatGPT. De app gebruikt de door het platform verstrekte gebruikers-ID om je verbinding en wijzigingsvoorstellen van die van andere gebruikers te scheiden. Er is geen gedeeld NextDNS-account.</p>
-    <h2>Wat de app bewaart</h2>
-    <p>De actieve opslag bevat je gebruikers-ID, versleutelde NextDNS-API-sleutel, profiel-ID en profielnaam, de instelling voor schrijfbevoegdheid en technische revisies en tijdstippen. De sleutel wordt met AES-256-GCM versleuteld en wordt niet teruggestuurd naar de browser of chat. De beheerder heeft technische beheermogelijkheden voor de gehoste app; dit is geen versleuteling waarbij alleen jij kunt ontsleutelen.</p>
-    <p>Wijzigingsvoorstellen bevatten de gekozen domeinen of instellingen, oude en voorgestelde waarden, tijdstippen en het uitvoeringsresultaat. Voorstellen kunnen ongeveer dertig dagen worden teruggekeken. Oudere records worden opgeruimd wanneer dezelfde gebruiker een nieuw voorstel maakt. Dit is geen garantie dat ieder record na dertig dagen uit alle opslag verdwenen is.</p>
-    <h2>Logs en resultaten in je gesprek</h2>
-    <p>Op jouw verzoek haalt de app logs, statistieken, lijsten of instellingen op bij NextDNS. De app bewaart geen afzonderlijke kopie van de opgehaalde DNS-logs. Resultaten die je in de chat opvraagt gaan naar ChatGPT voor verwerking in je gesprek. Client- en lokale IP-adressen worden bij logresultaten standaard weggelaten; je kunt expliciet vragen ze mee te nemen. Domeinen, apparaatnamen en profielinstellingen kunnen ook persoonlijke informatie bevatten.</p>
-    <h2>Hosting en andere diensten</h2>
-    <p>De app gebruikt ChatGPT Sites en de Cloudflare Worker-runtime voor hosting en opslag, en de NextDNS API voor het gekoppelde profiel. De app bevat geen eigen advertentietrackers of analytics-script. De gebruikte platforms kunnen zelf authenticatiegegevens, verzoekmetadata, operationele logs en back-ups verwerken volgens hun eigen afspraken. Deze pagina doet geen toezegging over hun bewaartermijnen.</p>
-    <h2>Ontkoppelen en intrekken</h2>
-    <p>Met ‘Verbinding ontkoppelen’ op de startpagina verwijder je je opgeslagen verbinding en wijzigingsvoorstellen uit de actieve appdatabase. Je NextDNS-profiel en gegevens die al in je ChatGPT-gesprekken staan blijven bij die diensten bestaan. Je kunt ook je API-sleutel bij NextDNS intrekken; dat maakt de opgeslagen sleutel onbruikbaar.</p>
-    <p className="nd-notice">De openbare plug-invermelding is nog in voorbereiding. Publicatievoorwaarden en de vereiste review moeten vóór directorypublicatie worden afgerond. Vragen en opmerkingen kunnen via GitHub Issues. Zie <a href="/support">Hulp</a> voor de huidige gebruiksinformatie.</p>
+    <a href="/">← NextDNS Assistant</a>
+    <h1>Privacy &amp; data</h1>
+    <p>NextDNS Assistant is a free, independent integration by Erik Le Blansch. This page describes how the current version processes data. Updated October 12, 2026.</p>
+    <h2>Your own connection</h2>
+    <p>You connect your own NextDNS profile after signing in with ChatGPT. The app uses the platform-provided user ID to separate your connection and change proposals from those of other users. There is no shared NextDNS account.</p>
+    <h2>What the app stores</h2>
+    <p>The active database stores your user ID, encrypted NextDNS API key, profile ID and name, write permission, technical revisions and timestamps. The key is encrypted with AES-256-GCM and is not returned to the browser or chat. The administrator has technical access to the hosted app; this is not encryption that only you can decrypt.</p>
+    <p>Change proposals contain selected domains or settings, previous and proposed values, timestamps and execution results. Proposals can be viewed for approximately thirty days. Older records are deleted when the same user creates a new proposal. This does not guarantee that every record disappears from all storage after thirty days.</p>
+    <h2>Logs and results in your conversation</h2>
+    <p>At your request, the app retrieves logs, analytics, lists or settings from NextDNS. It does not separately store fetched DNS logs. Results requested in chat are sent to ChatGPT for processing in your conversation. Client and local IP addresses are omitted from log results by default; you can explicitly request their inclusion. Domains, device names and profile settings may also contain personal information.</p>
+    <h2>Hosting and other services</h2>
+    <p>The app uses ChatGPT Sites and the Cloudflare Worker runtime for hosting and storage, and the NextDNS API for your connected profile. It contains no advertising trackers or custom analytics scripts. Those platforms may process authentication data, request metadata, operational logs and backups under their own policies. This page does not promise their retention periods.</p>
+    <h2>Disconnect and revoke access</h2>
+    <p>Use ‘Disconnect’ on the home page to delete your stored connection and change proposals from the active app database. Your NextDNS profile and information already in ChatGPT conversations remain with those services. You can also revoke your API key at NextDNS, which makes the stored key unusable.</p>
+    <p className="nd-notice">The public plugin listing is still being prepared. Publication terms and the required review must be completed before directory release. Questions and feedback can be submitted through GitHub Issues. See <a href="/support">Help</a> for current usage information.</p>
   </main>;
 }
