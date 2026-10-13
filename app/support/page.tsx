@@ -7,7 +7,7 @@ export default function Support() {
     <a href="/">← NextDNS Assistant</a>
     <h1>Help with NextDNS Assistant</h1>
     <h2>Questions and feedback</h2>
-    <p>Use <a href="https://github.com/erikleblansch/nextdns-assistent/issues" target="_blank" rel="noreferrer">GitHub Issues</a> for questions, bug reports or suggestions. These messages are public; omit API keys, profile IDs, IP addresses and personal logs.</p>
+    <p>Use <a href="https://github.com/erikleblansch/nextdns-assistant/issues" target="_blank" rel="noreferrer">GitHub Issues</a> for questions, bug reports or suggestions. These messages are public; omit API keys, profile IDs, IP addresses and personal logs.</p>
     <h2>A write or removal action is missing</h2>
     <p>Enable ‘Allow changes’ if you want to make changes from chat. Select the plugin again or refresh the connection if a conversation only sees read actions. To remove an entry, the server first creates a change proposal and then applies it; a separate delete tool is not needed. Specify the list and domain in your request.</p>
     <h2>Connection fails</h2>

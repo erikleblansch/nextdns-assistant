@@ -9,14 +9,14 @@ The publisher has chosen:
 - GitHub Issues for questions and feedback.
 - English interface, tool descriptions, documentation and listing.
 
-The repository `erikleblansch/nextdns-assistent` is public and has GitHub Issues
+The repository `erikleblansch/nextdns-assistant` is public and has GitHub Issues
 enabled. Sanitized source code and documentation are published there.
 
 | Field | Destination |
 | --- | --- |
-| Product website | https://github.com/erikleblansch/nextdns-assistent |
-| Support | https://github.com/erikleblansch/nextdns-assistent/issues |
-| Privacy | https://github.com/erikleblansch/nextdns-assistent/blob/main/docs/privacy.md |
+| Product website | https://github.com/erikleblansch/nextdns-assistant |
+| Support | https://github.com/erikleblansch/nextdns-assistant/issues |
+| Privacy | https://github.com/erikleblansch/nextdns-assistant/blob/main/docs/privacy.md |
 | Terms | `docs/terms.md` remains a draft; no final termsOfServiceURL |
 
 `publication/plugin.json` contains the product, support and privacy URLs.

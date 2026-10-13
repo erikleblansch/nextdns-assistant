@@ -20,11 +20,11 @@
           "Analyze my NextDNS logs from the last 24 hours and explain the limits of the sample.",
           "Show me how to remove a specific domain from my NextDNS denylist."
         ],
-        "websiteURL": "https://github.com/erikleblansch/nextdns-assistent",
-        "privacyPolicyURL": "https://github.com/erikleblansch/nextdns-assistent/blob/main/docs/privacy.md",
+        "websiteURL": "https://github.com/erikleblansch/nextdns-assistant",
+        "privacyPolicyURL": "https://github.com/erikleblansch/nextdns-assistant/blob/main/docs/privacy.md",
         "logo": "./assets/icon.png",
         "composerIcon": "./assets/icon.png",
-        "supportURL": "https://github.com/erikleblansch/nextdns-assistent/issues"
+        "supportURL": "https://github.com/erikleblansch/nextdns-assistant/issues"
       },
       "review": {
         "commerce": false,

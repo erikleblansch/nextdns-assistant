@@ -26,7 +26,7 @@ automatically. The integration cannot create or delete profiles or erase DNS log
 
 ## Questions and feedback
 
-Open a [GitHub Issue](https://github.com/erikleblansch/nextdns-assistent/issues)
+Open a [GitHub Issue](https://github.com/erikleblansch/nextdns-assistant/issues)
 using the bug report or question/suggestion form. **Issues are public:** do not
 share API keys, profile IDs, IP addresses or personal DNS log exports. Use
 fictional examples and remove private information from error messages.

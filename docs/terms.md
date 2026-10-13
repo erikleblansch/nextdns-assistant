@@ -28,7 +28,7 @@ software on devices.
 
 ## Support and disconnection
 
-Use [GitHub Issues](https://github.com/erikleblansch/nextdns-assistent/issues)
+Use [GitHub Issues](https://github.com/erikleblansch/nextdns-assistant/issues)
 for questions and feedback. Remove keys and private data from messages.
 You can disconnect the integration or revoke your key at NextDNS.
 Disconnecting does not delete a NextDNS profile or existing ChatGPT

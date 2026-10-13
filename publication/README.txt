@@ -1,7 +1,7 @@
 NextDNS Assistant — draft public directory release materials
 
 Source and publication materials are published in the public GitHub repository
-erikleblansch/nextdns-assistent. GitHub Issues is the publisher's chosen support
+erikleblansch/nextdns-assistant. GitHub Issues is the publisher's chosen support
 channel and is enabled. Product, support and privacy URLs are included in
 plugin.json. Terms remain a draft; no directory review has been submitted.
 

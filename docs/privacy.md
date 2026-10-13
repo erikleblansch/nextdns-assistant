@@ -47,7 +47,7 @@ ChatGPT conversations. You can also revoke your API key at NextDNS.
 
 ## Questions and feedback
 
-Use [GitHub Issues](https://github.com/erikleblansch/nextdns-assistent/issues)
+Use [GitHub Issues](https://github.com/erikleblansch/nextdns-assistant/issues)
 for questions and feedback. Issues are public: do not include keys, profile
 IDs, IP addresses or personal logs. Use the disconnection function to remove
 your own active app data.
