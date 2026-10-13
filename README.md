@@ -47,6 +47,21 @@ connection and its proposals.
 Read the [privacy description](docs/privacy.md) and
 [draft terms of use](docs/terms.md).
 
+## License
+
+The project's original code is available under the [MIT License](LICENSE).
+You may use, modify and redistribute it, including commercially, while retaining
+the copyright and license notices. The software is provided without warranty.
+
+Bundled third-party code retains its own license notices in
+`build/sites-vite-plugin.LICENSE` and
+`vendor/shadcn-tailwind-4.13.0.LICENSE.md`. Dependencies retain their respective
+licenses. The code license is separate from the hosted service's terms and
+does not grant access to another user's NextDNS account.
+
+See [CHANGELOG.md](CHANGELOG.md) for source version notes. This is a deployable
+web application; no npm or GitHub Packages dependency package is required.
+
 ## Development
 
 The app uses React, Vinext/Vite, Cloudflare Workers and D1. Sites provides
