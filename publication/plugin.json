@@ -38,10 +38,10 @@
               "expected_behavior": "get_profile is called with no profile override. The response uses settings from its data, distinguishes recommendations from current values, and makes no preview_setting_changes or apply_changes call. A missing or rejected connection is reported honestly rather than replaced with invented settings."
             },
             {
-              "description": "Bounded log analysis and privacy. Setup: the dedicated test profile has recent synthetic DNS activity, with domains under example.com and optional device names that contain no personal information. An empty log window is a valid result and must be explained.",
-              "prompt": "Summarize at most 100 log entries from my NextDNS profile over the last 24 hours. Show at most 20 domains, say whether this is a sample, and leave out client IP addresses.",
+              "description": "Bounded raw-log analysis and privacy. Setup: the dedicated test profile contains recent synthetic A and AAAA DNS activity under reserved example domains. The current fixture contains more than 100 raw entries. An empty later window is valid and must be explained. Device names contain no personal information.",
+              "prompt": "Summarize at most 100 raw DNS log entries from the last 24 hours. Show up to 10 domains and group the observed entries by status. Omit IP addresses and device IDs. State how many entries were examined and whether this is a sample.",
               "tools_triggered": "summarize_logs",
-              "expected_behavior": "summarize_logs uses from=-24h, max_entries=100 and top=20. The answer respects observed_log_entries, is_sample, complete_window and domains_truncated, explains deduplication, and includes no clientIp or localIp. It does not call the observed entry count an exact total DNS query count. No changes are made."
+              "expected_behavior": "summarize_logs uses from=-24h, raw=true, max_entries=100 and top=10. The answer respects observed_log_entries, is_sample, complete_window and domains_truncated, states that raw entries are not deduplicated, and includes no clientIp, localIp or device IDs. A sample is not described as an exact total DNS query count. No changes are made."
             },
             {
               "description": "Official query totals. Setup: a connected dedicated test profile with query history; no precise count is assumed beforehand. The query total must come from the live analytics response rather than counting navigation-oriented logs.",
@@ -56,10 +56,10 @@
               "expected_behavior": "Read the denylist. preview_list_changes uses list=denylist, operation=remove and entries=[ads.example.com]. Show the returned active rule as before and null as after. apply_changes receives only that returned plan_id under this explicit user authorization. Report status=applied only if the server verifies it; keep.example.com and the allowlist stay unchanged. A partial or uncertain result is reported and never retried automatically."
             },
             {
-              "description": "Nested setting preview without execution. Setup: the dedicated test profile has settings.logs.drop.ip=false. Writes may remain disabled because this case only creates a preview. The profile's settings.logs.drop.domain value is recorded before the test.",
-              "prompt": "Show what would change if NextDNS stopped recording client IP addresses. Do not apply the change yet.",
+              "description": "Nested performance setting preview without execution. Setup: the dedicated test profile has settings.performance.cacheBoost=false. Writes may remain disabled because this case only creates a preview. Record settings.performance.ecs, settings.performance.cnameFlattening and settings.logs.drop.ip before the test. IP logging stays disabled throughout.",
+              "prompt": "Show what would change if I enabled Cache Boost in my NextDNS performance settings. Do not apply the change yet.",
               "tools_triggered": "get_profile, preview_setting_changes",
-              "expected_behavior": "Read get_profile and preview exactly changes=[{path:settings.logs.drop.ip,value:true}]. Display false to true using the returned proposal and explain that settings.logs.drop.domain is unaffected. Do not call apply_changes. If the value is already true, report that no change is needed rather than fabricating a plan."
+              "expected_behavior": "Read get_profile and preview exactly changes=[{path:settings.performance.cacheBoost,value:true}]. Display false to true from the returned proposal and explain that other performance fields and IP logging are unaffected. Do not call apply_changes. If the value is already true, report that no change is needed rather than fabricating a plan."
             }
           ],
           "negative": [
@@ -80,8 +80,10 @@
       },
       "publication": {
         "countries": [],
-        "release_notes": "English public-release preparation: translated the interface, tool descriptions, errors, documentation and GitHub issue forms; added GitHub support links. Targeted changes remain previewed and verified. Public directory review is still pending."
+        "release_notes": "Initial English public-submission preparation: NextDNS logs and official analytics, settings inspection, previewed and verified targeted list changes, encrypted user-scoped credentials, public GitHub source and support, and MIT licensing. The real development demo has been recorded and reviewed. Directory submission remains pending."
       }
     }
-  }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/erikleblansch/nextdns-assistant"
 }

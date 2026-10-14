@@ -1,48 +1,55 @@
 # Review preparation status
 
-This package is a draft. It has not been uploaded to the submission portal,
-submitted for review or published in the plugin directory.
+This package remains a draft. No public-directory draft upload, review
+submission or directory publication has been completed.
 
-## Completed implementation validation
+## Implementation and recorded development evidence
 
-The English implementation passed all seventeen synthetic-data regression
-checks, TypeScript validation and the production build. The existing private
-deployment remains connected and retains its original App and plugin identity.
-Source code and GitHub Issue forms are public. The export was checked for
-personal account data, secrets and temporary image paths. Referenced PNG assets
-are included in the package.
+The English implementation previously passed seventeen synthetic regression
+checks, TypeScript validation and the production build. No server implementation
+was changed while reviewing this recording. The canonical Sites App and plugin
+identity and its audience have been preserved.
+
+A real development demo was received and reviewed on 14 October 2026. It shows
+connection verification, a read-only security audit, a bounded raw-log summary,
+official status and device analytics, a previewed and verified targeted denylist
+removal, and refusal of unsupported log deletion. See `demo-recording.txt` for
+timestamps and the limits of the privacy check.
+
+Native development checks additionally verified a 100-entry raw sample with
+`is_sample=true`, official totals of 167 queries (143 default, 24 blocked), four
+fictional devices, and a false-to-true Cache Boost preview without applying it.
+The synthetic `ads.example.com` rule was restored using a preview and verified
+execution. Other rules, profile settings and IP logging were unchanged.
 
 ## Directory review cases
 
-The setup and observable expectations for each case are in `plugin.json`.
-Implementation tests do not count as running these prompts in a reviewer
-installation.
-
-| Case | Status | Required setup |
+| Case | Development evidence | Exact saved reviewer installation |
 | --- | --- | --- |
-| Read-only security audit | Not run | Connected dedicated NextDNS test profile |
-| Bounded log analysis | Not run | Synthetic DNS activity in the test profile |
-| Official query totals | Not run | Query history in the test profile |
-| Targeted denylist deletion | Not run | Writes enabled and the specified synthetic list entries |
-| Nested setting preview | Not run | The specified starting boolean values |
-| Unsupported profile creation | Not run | The independent reviewer installation |
-| Unsupported DNS-log deletion | Not run | The independent reviewer installation |
-| Unsupported router software installation | Not run | The independent reviewer installation |
+| Read-only security audit | Recorded and native profile read checked | Not run |
+| Bounded raw-log analysis | Recorded; native 100-entry sample checked | Not run |
+| Official query totals | Recorded; live status/device analytics checked | Not run |
+| Targeted denylist deletion | Recorded; result checked and fixture reset | Not run |
+| Nested setting preview | Native Cache Boost preview checked; not in video | Not run |
+| Unsupported profile creation | Not run as a natural-language host prompt | Not run |
+| Unsupported DNS-log deletion | Recorded refusal | Not run |
+| Unsupported router installation | Not run as a natural-language host prompt | Not run |
 
-## Next preparation step
+The recording and native tool checks are development evidence. They are not
+claims that all required review prompts passed in a final reviewer installation.
 
-Use a dedicated NextDNS test profile, containing only synthetic data, with a
-working ChatGPT development installation. The existing connection screen lets
-each signed-in user enter their own key; keys must never be placed in chat,
-GitHub Issues, the ZIP or a recording. Prepare the fixtures described in the
-review cases. Do not replace or record the publisher's production profile.
+## Remaining preparation and portal setup
 
-Rehearse the prompts in `demo-recording.txt`, then capture real interactions
-with a screen recorder. No video-capture tool is available in this session.
-Check playback and secrets before hosting the recording at a reviewer-accessible
-destination. Only a verified recording URL completes the demo field.
+The supplied video has a local reviewed MP4 copy, but no stable, accessible
+recording URL has been hosted and verified. Final service terms remain a draft
+in `docs/terms.md`; there is no finalized `termsOfServiceURL`.
 
-Final terms of use remain a draft in `docs/terms.md`. The verified developer
-identity, legal/policy attestations, reviewer access, canonical App ownership
-route, domain verification and portal scans have not been completed or
-verified. Reviewer credentials belong only in secure portal fields.
+The publication portal displayed a sign-in page. Its secure sign-in request
+was declined, so there was no authenticated portal access and no draft upload
+or request for review. Verified developer identity, domain verification,
+reviewer access, canonical App ownership support and portal scans remain
+unverified. Legal and policy attestations must be completed by the publisher.
+
+Keep reviewer credentials and account setup instructions in secure portal fields,
+never in this ZIP or public source. Use a route that preserves the existing
+Sites App and plugin ownership and does not create a duplicate App.

@@ -1,37 +1,34 @@
 # Public directory release preparation
 
-The publisher has chosen:
+Confirmed publication choices: Erik Le Blansch as the public developer name;
+free access; all platform-supported countries; English interface and listing;
+public source on `erikleblansch/nextdns-assistant`; GitHub Issues for support.
+The source is MIT licensed, with third-party notices retained.
 
-- Public developer name: **Erik Le Blansch**.
-- Free access to the plugin.
-- Availability in all countries supported by the platform.
-- Source code on the personal GitHub account `erikleblansch`.
-- GitHub Issues for questions and feedback.
-- English interface, tool descriptions, documentation and listing.
-
-The repository `erikleblansch/nextdns-assistant` is public and has GitHub Issues
-enabled. Sanitized source code and documentation are published there.
-
-| Field | Destination |
+| Field | Destination or status |
 | --- | --- |
 | Product website | https://github.com/erikleblansch/nextdns-assistant |
 | Support | https://github.com/erikleblansch/nextdns-assistant/issues |
 | Privacy | https://github.com/erikleblansch/nextdns-assistant/blob/main/docs/privacy.md |
-| Terms | `docs/terms.md` remains a draft; no final termsOfServiceURL |
+| Terms | `docs/terms.md` is still a draft; no finalized URL |
+| Demo | Real recording reviewed; permanent accessible URL pending |
 
-`publication/plugin.json` contains the product, support and privacy URLs.
-The repository's public visibility, Issues setting and uploaded source were
-verified through GitHub's API. Final terms remain to be completed.
+The 5-minute 40-second video demonstrates real development interactions with
+synthetic data. A compatible MP4 was prepared without re-encoding the video.
+Native development checks confirmed the demo data and a non-applied settings
+preview. The deletion fixture has been restored for repeatable testing.
+See `publication/demo-recording.txt` and `publication/review-notes.md`.
 
-Implementation checks pass. A separate reviewer account connected to
-dedicated NextDNS test data, a real recorded demo with a verified URL,
-developer verification and portal attestations are still required. The eight
-review prompts have not been run in an independent reviewer installation.
-See `publication/demo-recording.txt` for the recording plan.
+The review package has five positive and three negative cases. The nested
+settings case uses Cache Boost so IP logging stays disabled. The exact saved
+reviewer installation has not been tested; developer/domain verification,
+reviewer access, legal attestations, scans and the canonical ownership route
+remain unverified.
 
-Use a submission route that preserves the existing Sites App and its
-ownership. An upload must not create a second App or duplicate private plugin.
-No directory draft has been created and no review has been submitted.
+The public-directory portal required sign-in, which was not completed. No
+public-directory draft was uploaded, no review was requested and no directory
+release was published. The existing private plugin and Sites audience were
+preserved; no duplicate App or plugin was created.
 
 Official submission procedure:
 <https://developers.openai.com/plugins/deploy/submission>.

@@ -1,30 +1,35 @@
-Real demo preparation — no recording or completed review evidence yet
+Real recorded demo — reviewed on 14 October 2026
 
-Use a separate ChatGPT reviewer account and a dedicated NextDNS test profile.
-Use fictional devices and synthetic DNS activity only. Connect the key in
-advance and enable changes for the targeted write test. Do not record the key
-or profile ID. Do not use a production profile.
+A real 5-minute 40-second screen recording was supplied by the publisher.
+The reviewed MP4 preserves all 9,227 video frames at 2172 x 1846 pixels.
+It has no audio track. It shows readable English prompts and real results
+from the existing NextDNS Assistant development installation.
 
-Rehearse and record approximately 2–3 minutes:
-1. Show that NextDNS Assistant is available in chat and connected.
-2. Ask: "Read my security settings, but do not change anything."
-   Show the real tool result and an explanation based on returned values.
-3. Ask: "Summarize at most 100 log entries from the last 24 hours; show at most
-   20 domains. Omit IP addresses and say whether this is a sample."
-   Show the actual sampling and completeness indicators.
-4. Ask: "Remove ads.example.com from my denylist. Show the change first,
-   apply it and check the result." The test profile must already contain
-   that entry. Show the preview, apply result and real read-back verification.
-5. Ask: "Erase all DNS logs." Show that the app does not support this and
-   does not invent a success or call an unintended write tool.
+Approximate evidence timestamps:
+00:24 — Dedicated demo profile connection confirmed, with write access enabled.
+01:12 — Current security settings displayed; read-only audit and explanation.
+02:20 — Bounded raw-log summary: 100 entries, 10 displayed domains, sample stated.
+03:00 — Official analytics: 167 queries, 143 default and 24 blocked; demo devices.
+03:44 — Preview removing only ads.example.com; other rules remain unchanged.
+04:46 — Removal applied and verified; two retained rules are still active.
+05:32 — DNS-log deletion refused as unsupported, with no invented success.
 
-Use a real screen recorder. Screenshots, this script and a simulated chat do
-not count as a demo recording. Play back the video to check readability,
-real results and the absence of secrets or private data. Host it somewhere
-the publisher chooses that reviewers can access. Add review.demo_recording_url
-only after the real URL has been checked.
+The video decoded fully. OCR was checked at two-second intervals across
+170 sampled frames, and selected frames were inspected visually. No visible
+API keys, passwords, email addresses, profile IDs or IP addresses were found
+in these checks. These checks cannot certify that every unsampled frame is
+free of sensitive information.
 
-Run the five positive and three negative cases in plugin.json separately
-against the exact saved portal version. Their status is currently Not run;
-the implementation tests have passed. Put reviewer credentials and sign-in
-instructions only in the secure portal fields.
+The recording's domains and device names are synthetic. The live development
+connection was independently checked through the native plugin, confirming
+the bounded raw sample, official analytics and targeted list state.
+The deletion fixture was restored after filming so the test can be repeated.
+A Cache Boost setting preview was also checked without applying it.
+
+A stable reviewer-accessible recording URL has not been hosted or verified.
+review.demo_recording_url therefore remains absent. A private Library file
+or this description is not a verified recording URL.
+
+The five positive and three negative review cases still need to run against
+the exact saved submission version with independent reviewer access.
+Development checks do not replace that final portal validation.

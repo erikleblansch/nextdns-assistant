@@ -1,20 +1,27 @@
 NextDNS Assistant — draft public directory release materials
 
-Source and publication materials are published in the public GitHub repository
-erikleblansch/nextdns-assistant. GitHub Issues is the publisher's chosen support
-channel and is enabled. Product, support and privacy URLs are included in
-plugin.json. Terms remain a draft; no directory review has been submitted.
+English source and support are public at:
+https://github.com/erikleblansch/nextdns-assistant
 
-Read docs/publication-status.md for the actual status and remaining materials.
-Directory review requires a real demo and an independent reviewer installation;
-implementation tests do not replace them. Store reviewer credentials only in
-the publication portal's secure fields.
+Product, support and privacy URLs are included in plugin.json. The package
+includes the MIT license. Final service terms remain a draft; the required
+terms URL is still absent.
 
-This snapshot contains no original Git history, personal NextDNS profile ID,
-API key, encrypted key, database, DNS logs, account email address, existing
-hosting project ID or hosting credential. The chosen public developer name
-is included.
+A real development demo has been recorded and reviewed. The reviewed MP4 is
+provided separately. Its permanent reviewer-accessible URL has not been hosted
+or verified, so no demo_recording_url is claimed in this package.
 
-This source export does not replace the existing hosted service. Use only a
-submission route that preserves the existing Sites App and its ownership;
-do not create a duplicate App.
+The eight review prompts and their expected behavior are included. Development
+checks and recorded results do not replace running those prompts against the
+exact saved submission with an independently accessible reviewer account.
+
+No directory draft has been uploaded and no review has been submitted.
+Read docs/publication-status.md and review-notes.md for the verified status.
+
+This ZIP contains no API key, encrypted key, password, account email, personal
+profile ID, database, DNS-log export, hosting project ID, hosting credential,
+original Git history or private App binding. Store reviewer access details only
+in secure portal fields. The publisher's chosen public name is included.
+
+Preserve the canonical Sites App and its ownership during submission.
+Do not create a duplicate private plugin or App to work around the ownership route.
