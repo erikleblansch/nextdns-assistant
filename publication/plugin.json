@@ -24,7 +24,8 @@
         "privacyPolicyURL": "https://github.com/erikleblansch/nextdns-assistant/blob/main/docs/privacy.md",
         "logo": "./assets/icon.png",
         "composerIcon": "./assets/icon.png",
-        "supportURL": "https://github.com/erikleblansch/nextdns-assistant/issues"
+        "supportURL": "https://github.com/erikleblansch/nextdns-assistant/issues",
+        "termsOfServiceURL": "https://github.com/erikleblansch/nextdns-assistant/blob/main/docs/terms.md"
       },
       "review": {
         "commerce": false,

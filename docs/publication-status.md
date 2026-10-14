@@ -10,7 +10,7 @@ The source is MIT licensed, with third-party notices retained.
 | Product website | https://github.com/erikleblansch/nextdns-assistant |
 | Support | https://github.com/erikleblansch/nextdns-assistant/issues |
 | Privacy | https://github.com/erikleblansch/nextdns-assistant/blob/main/docs/privacy.md |
-| Terms | `docs/terms.md` is still a draft; no finalized URL |
+| Terms | https://github.com/erikleblansch/nextdns-assistant/blob/main/docs/terms.md |
 | Demo | Real recording reviewed; permanent accessible URL pending |
 
 The 5-minute 40-second video demonstrates real development interactions with

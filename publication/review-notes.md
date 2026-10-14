@@ -41,8 +41,8 @@ claims that all required review prompts passed in a final reviewer installation.
 ## Remaining preparation and portal setup
 
 The supplied video has a local reviewed MP4 copy, but no stable, accessible
-recording URL has been hosted and verified. Final service terms remain a draft
-in `docs/terms.md`; there is no finalized `termsOfServiceURL`.
+recording URL has been hosted and verified. The practical service terms
+are published in `docs/terms.md`, and `termsOfServiceURL` is included.
 
 The publication portal displayed a sign-in page. Its secure sign-in request
 was declined, so there was no authenticated portal access and no draft upload

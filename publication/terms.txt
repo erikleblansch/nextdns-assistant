@@ -1,0 +1,11 @@
+Terms of use — NextDNS Assistant
+
+The published operative terms are available at:
+https://github.com/erikleblansch/nextdns-assistant/blob/main/docs/terms.md
+
+They cover the free independent integration, authorized account access,
+previewed and verified changes, supported limits, privacy, support and
+disconnection. They are separate from the MIT source license.
+
+OpenAI’s required developer/legal/policy attestations have not been completed
+in the public submission portal. Publication and review are still pending.

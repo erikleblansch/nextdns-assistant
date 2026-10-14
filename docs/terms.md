@@ -1,7 +1,7 @@
-# Draft terms of use — NextDNS Assistant
+# Terms of use — NextDNS Assistant
 
-This is preparation for public release. Final terms and the required
-publication portal attestations have not yet been completed.
+These terms describe use of the NextDNS Assistant integration. The software
+source license is provided separately in the repository’s `LICENSE` file.
 
 ## Integration and costs
 
@@ -33,8 +33,3 @@ for questions and feedback. Remove keys and private data from messages.
 You can disconnect the integration or revoke your key at NextDNS.
 Disconnecting does not delete a NextDNS profile or existing ChatGPT
 conversations.
-
-Before final publication, the publisher must decide any additional service
-terms concerning availability, changes, termination, privacy rights and
-support. This draft does not make those decisions or invent waivers of rights
-or liability clauses.

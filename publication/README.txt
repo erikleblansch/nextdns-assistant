@@ -3,9 +3,9 @@ NextDNS Assistant — draft public directory release materials
 English source and support are public at:
 https://github.com/erikleblansch/nextdns-assistant
 
-Product, support and privacy URLs are included in plugin.json. The package
-includes the MIT license. Final service terms remain a draft; the required
-terms URL is still absent.
+Product, support, privacy and terms URLs are included in plugin.json.
+The practical service terms cover the confirmed integration behavior.
+The package also includes the separate MIT source license.
 
 A real development demo has been recorded and reviewed. The reviewed MP4 is
 provided separately. Its permanent reviewer-accessible URL has not been hosted
