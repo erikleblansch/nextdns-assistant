@@ -31,6 +31,8 @@ using the bug report or question/suggestion form. **Issues are public:** do not
 share API keys, profile IDs, IP addresses or personal DNS log exports. Use
 fictional examples and remove private information from error messages.
 
+For security vulnerabilities, use the [private reporting instructions](SECURITY.md).
+
 ## Privacy
 
 Each user connects their own profile through the connection screen. API keys do
