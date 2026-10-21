@@ -15,17 +15,9 @@ concurrency:
 
 jobs:
   application:
-    name: NextDNS application checks (${{ matrix.name }})
+    name: NextDNS application checks
     runs-on: ubuntu-24.04
     timeout-minutes: 20
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - name: baseline
-            source_revision: e3300acf12074d57dd2c1a8c500d155abcadf699
-          - name: pr8
-            source_revision: f564eff5690a1d3daa6483ec05c3a61772d42a4a
     env:
       CI: 'true'
       CLOUDFLARE_CF_FETCH_ENABLED: 'false'
@@ -41,7 +33,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           path: source
-          ref: ${{ matrix.source_revision }}
+          ref: ${{ github.sha }}
           persist-credentials: false
       - name: Install the exact Node runtime
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -58,13 +50,13 @@ jobs:
           printf '%s\n' "$RUNNER_TEMP/nextdns-pnpm/node_modules/.bin" >> "$GITHUB_PATH"
       - name: Run frozen install, tests, typecheck, build and loopback smoke
         env:
-          EXPECTED_SOURCE_REVISION: ${{ matrix.source_revision }}
+          EXPECTED_SOURCE_REVISION: ${{ github.sha }}
         run: bash ci/scripts/ci/validate.sh source evidence
       - name: Preserve only bounded source and phase receipts
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: nextdns-${{ matrix.name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          name: nextdns-${{ github.run_id }}-${{ github.run_attempt }}
           path: evidence/*.json
           if-no-files-found: warn
           retention-days: 7
