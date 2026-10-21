@@ -1,0 +1,62 @@
+name: NextDNS application checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  application:
+    name: NextDNS application checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      CI: 'true'
+      CLOUDFLARE_CF_FETCH_ENABLED: 'false'
+      WRANGLER_SEND_METRICS: 'false'
+      WRANGLER_WRITE_LOGS: 'false'
+    steps:
+      - name: Check out the reviewed CI driver
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: ci
+          persist-credentials: false
+      - name: Check out the exact application source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: source
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Install the exact Node runtime
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.19.0'
+          check-latest: false
+      - name: Prepare the exact package manager without lifecycle scripts
+        run: |
+          set -euo pipefail
+          test "$GITHUB_ACTIONS" = true
+          test "$RUNNER_ENVIRONMENT" = github-hosted
+          test "$(node --version)" = v24.19.0
+          npm install --prefix "$RUNNER_TEMP/nextdns-pnpm" --ignore-scripts --no-audit --no-fund --package-lock=false pnpm@11.25.0
+          printf '%s\n' "$RUNNER_TEMP/nextdns-pnpm/node_modules/.bin" >> "$GITHUB_PATH"
+      - name: Run frozen install, tests, typecheck, build and loopback smoke
+        env:
+          EXPECTED_SOURCE_REVISION: ${{ github.sha }}
+        run: bash ci/scripts/ci/validate.sh source evidence
+      - name: Preserve only bounded source and phase receipts
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: nextdns-${{ github.run_id }}-${{ github.run_attempt }}
+          path: evidence/*.json
+          if-no-files-found: warn
+          retention-days: 7
